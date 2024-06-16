@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./src/config/database");
 const routes = require("./src/routes");
+require("./src/utils/firebase");
 
 
 const app = express();
