@@ -42,6 +42,7 @@ cd movie-api
 ### 2. Environment Variables
 Create a .env file in the project root with the following content:
 
+```
 PORT=
 NODE_ENV=
 PG_HOST=
@@ -62,7 +63,7 @@ FIREBASE_ADM_PROJECT_ID=
 FIREBASE_ADM_PRIVATE_KEY_ID=
 FIREBASE_ADM_CLIENT_EMAIL=
 FIREBASE_ADM_CLIENT_ID=
-
+```
 ### Run with Docker
 
 docker-compose up --build
