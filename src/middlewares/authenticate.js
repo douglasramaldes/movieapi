@@ -12,13 +12,14 @@ const authenticate = async (req, res, next) => {
     }
 
     const token = authHeader.replace("Bearer ", "");
-    const decodedToken = await admin.auth().verifyIdToken(token);
 
-    if (!decodedToken) {
+    const decodedToken = await admin.auth().verifyIdToken(token);
+    if (!decodedToken?.uid) {
       return res.status(401).json({ error: "Authorization expired" });
     }
 
     req.userId = decodedToken.uid;
+
     next();
   } catch (error) {
     console.error("Authentication error:", error);
